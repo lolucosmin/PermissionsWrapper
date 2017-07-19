@@ -1,9 +1,11 @@
 # PermissionsWrapper
 ## Installation
 
-Add url to your gradle file
+Add dependencies
 ```Gradle
-compile 'com.github.lolucosmin:PermissionsWrapper:PermissionsWrapper_1.0'
+dependencies {
+    compile 'com.github.lolucosmin:PermissionsWrapper:PermissionsWrapper_1.0'
+}
 ```
 
 Add repositories
