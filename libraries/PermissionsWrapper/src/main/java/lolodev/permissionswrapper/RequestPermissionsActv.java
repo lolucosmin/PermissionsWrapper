@@ -25,7 +25,7 @@
  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package lolodev.permissionslib;
+package lolodev.permissionswrapper;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -44,8 +44,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ContextThemeWrapper;
 import android.text.TextUtils;
 
-import lolodev.permissionslib.constants.Constants;
-import lolodev.permissionslib.utils.PermissionUtils;
+import lolodev.permissionswrapper.constants.Constants;
+import lolodev.permissionswrapper.utils.PermissionUtils;
 
 /**
  * Created by LoloDev on 4/5/2017.

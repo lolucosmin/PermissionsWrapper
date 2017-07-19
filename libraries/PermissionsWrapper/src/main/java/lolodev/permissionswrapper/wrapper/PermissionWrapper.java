@@ -25,7 +25,7 @@
  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package lolodev.permissionslib.wrapper;
+package lolodev.permissionswrapper.wrapper;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -33,9 +33,9 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
 
-import lolodev.permissionslib.constants.Constants;
-import lolodev.permissionslib.RequestPermissionsActv;
-import lolodev.permissionslib.callback.OnRequestPermissionsCallBack;
+import lolodev.permissionswrapper.constants.Constants;
+import lolodev.permissionswrapper.RequestPermissionsActv;
+import lolodev.permissionswrapper.callback.OnRequestPermissionsCallBack;
 
 /**
  * Created by LoloDev on 4/5/2017.

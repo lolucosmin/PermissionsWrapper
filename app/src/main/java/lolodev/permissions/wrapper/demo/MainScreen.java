@@ -7,8 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import lolodev.permissionslib.callback.OnRequestPermissionsCallBack;
-import lolodev.permissionslib.wrapper.PermissionWrapper;
+import lolodev.permissionswrapper.callback.OnRequestPermissionsCallBack;
+import lolodev.permissionswrapper.wrapper.PermissionWrapper;
 
 public class MainScreen extends AppCompatActivity {
 

@@ -1,11 +1,11 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="lolodev.permissionslib">
+    package="lolodev.permissionswrapper">
 
     <application>
 
         <activity
-            android:name="lolodev.permissionslib.RequestPermissionsActv"
+            android:name="lolodev.permissionswrapper.RequestPermissionsActv"
             android:theme="@style/PermissionRequestActv"/>
 
     </application>

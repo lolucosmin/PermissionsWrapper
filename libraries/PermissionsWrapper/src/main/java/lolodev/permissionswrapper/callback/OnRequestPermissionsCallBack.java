@@ -25,16 +25,17 @@
  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package lolodev.permissionslib.constants;
+
+package lolodev.permissionswrapper.callback;
 
 /**
  * Created by LoloDev on 4/5/2017.
  *
- * Help constants for functionality
+ * Permissions callback witch return result to GUI
  */
-public class Constants {
+public interface OnRequestPermissionsCallBack {
 
-    public static final String GRANT = "grant";
-    public static final String DENIED = "denied";
+    void onGrant();
 
+    void onDenied(String permission);
 }

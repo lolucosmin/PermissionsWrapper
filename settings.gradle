@@ -1,2 +1,2 @@
-include ':app', ':PermissionsLibrary'
-project(':PermissionsLibrary').projectDir = new File('libraries/PermissionsLibrary')
+include ':app', ':PermissionsWrapper'
+project(':PermissionsWrapper').projectDir = new File('libraries/PermissionsWrapper')
