@@ -26,16 +26,16 @@ new PermissionWrapper.Builder(this)
                 .addPermissionRationale("Rationale message")
                 //show settings dialog,in this case with default message base on requested permission/s
                 .addPermissionsGoSettings(true)
-                //enable callback to know what option was choose
+                //enable callback to know what option was choosen
                 .addRequestPermissionsCallBack(new OnRequestPermissionsCallBack() {
                     @Override
                     public void onGrant() {
-                        Log.i(MainScreen.class.getSimpleName(), "Permission was grant.");
+                        Log.i(MainScreen.class.getSimpleName(), "Permission was granted.");
                     }
 
                     @Override
                     public void onDenied(String permission) {
-                        Log.i(MainScreen.class.getSimpleName(), "Permission was not grant.");
+                        Log.i(MainScreen.class.getSimpleName(), "Permission was not granted.");
                     }
                 }).build().request();
 ``` 
@@ -48,16 +48,16 @@ new PermissionWrapper.Builder(this)
                 .addPermissionRationale("Rationale message")
                 //show settings dialog,in this case with default message base on requested permission/s
                 .addPermissionsGoSettings(true)
-                //enable callback to know what option was choose
+                //enable callback to know what option was choosed
                 .addRequestPermissionsCallBack(new OnRequestPermissionsCallBack() {
                     @Override
                     public void onGrant() {
-                        Log.i(MainScreen.class.getSimpleName(), "Permission was grant.");
+                        Log.i(MainScreen.class.getSimpleName(), "Permission was granted.");
                     }
 
                     @Override
                     public void onDenied(String permission) {
-                        Log.i(MainScreen.class.getSimpleName(), "Permission was not grant.");
+                        Log.i(MainScreen.class.getSimpleName(), "Permission was not granted.");
                     }
                 }).build().request();
 ``` 
