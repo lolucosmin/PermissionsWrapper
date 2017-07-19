@@ -63,7 +63,7 @@ new PermissionWrapper.Builder(this)
 ``` 
 
 
-## How To Use
+## License
 ```
 PermissionsWrapper
 Copyright (c) 2017 Lolu Cosmin (https://github.com/lolucosmin).
