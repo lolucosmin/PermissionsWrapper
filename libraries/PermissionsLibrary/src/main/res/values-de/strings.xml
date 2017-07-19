@@ -1,0 +1,18 @@
+<resources>
+    <string name="enabled">Enable</string>
+    <string name="cancel">Cancel</string>
+    <string name="settings">Settings</string>
+
+    <string name="permission_go_settings_title">Permission needed</string>
+    <string name="permission_android.permission.CAMERA">To make this action please open the settings and allow access to the Camera.</string>
+    <string name="permission_android.permission.READ_EXTERNAL_STORAGE">To make this action please open the settings and allow access to the Storage.</string>
+    <string name="permission_android.permission.WRITE_EXTERNAL_STORAGE">To make this action please open the settings and allow access to the Storage.</string>
+    <string name="permission_android.permission.READ_CONTACTS">To make this action please open the settings and allow access to the Contacts.</string>
+    <string name="permission_android.permission.WRITE_CONTACTS">To make this action please open the settings and allow access to the Contacts.</string>
+    <string name="permission_android.permission.READ_CALENDAR">To make this action please open the settings and allow access to the Calendar.</string>
+    <string name="permission_android.permission.WRITE_CALENDAR">To make this action please open the settings and allow access to the Calendar.</string>
+    <string name="permission_android.permission.ACCESS_COARSE_LOCATION">To make this action please open the settings and allow access to the Location.</string>
+    <string name="permission_android.permission.ACCESS_FINE_LOCATION">To make this action please open the settings and allow access to the Location.</string>
+    <string name="permission_default_message">To make this action please open the settings and manually enable the requested permission.</string>
+
+</resources>

@@ -1,0 +1,35 @@
+<resources>
+
+    <style name="RationalDialogStyle" parent="@style/Theme.AppCompat.Light.Dialog">
+
+        <!-- alert dialog style-->
+        <item name="alertDialogTheme">@style/AlertDialogStyle</item>
+        <item name="android:alertDialogTheme">@style/AlertDialogStyle</item>
+    </style>
+
+    <style name="PermissionRequestActv" parent="@style/Theme.AppCompat.Dialog">
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <!--Alert Dialogs-->
+    <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Used for the buttons -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="android:textColorSecondary">@android:color/black</item>
+        <!-- Used for the background -->
+        <item name="android:background">@android:color/white</item>
+
+        <item name="android:windowTitleStyle">@style/AlertDialogTitleTextStyle</item>
+    </style>
+
+    <style name="AlertDialogTitleTextStyle">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Title</item>
+    </style>
+    <!--Alert Dialogs-->
+
+
+</resources>

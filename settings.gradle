@@ -1,0 +1,2 @@
+include ':app', ':PermissionsLibrary'
+project(':PermissionsLibrary').projectDir = new File('libraries/PermissionsLibrary')
