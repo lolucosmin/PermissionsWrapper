@@ -14,5 +14,5 @@ Add repositories
 ```Gradle
 repositories {
         maven { url "https://jitpack.io" }
-    }
+}
 ```
