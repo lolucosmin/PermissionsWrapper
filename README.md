@@ -1,4 +1,6 @@
 # PermissionsWrapper
+PermissionsWrapper is the easiest way to manage Android Marshmallow and Nougat runtime permissions.
+
 ## Installation
 
 Add dependencies
