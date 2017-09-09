@@ -99,6 +99,7 @@ public class PermissionWrapper {
             return;
         }
         Intent intent = RequestPermissionsActv.newIntent(context, permissions, rationalMessage, permissionGoSettings, permissionGoSettingsMessage);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
         LocalBroadcastManager.getInstance(context).registerReceiver(callBackBroadcastReceiver, new IntentFilter(context.getPackageName()));
     }
