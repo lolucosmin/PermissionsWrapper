@@ -87,11 +87,11 @@ public class PermissionUtils {
                 break;
 
             case Manifest.permission.ACCESS_COARSE_LOCATION:
-                message = context.getString(R.string.permission_android_permission_WRITE_CALENDAR);
+                message = context.getString(R.string.permission_android_permission_ACCESS_COARSE_LOCATION);
                 break;
 
             case Manifest.permission.ACCESS_FINE_LOCATION:
-                message = context.getString(R.string.permission_android_permission_WRITE_CALENDAR);
+                message = context.getString(R.string.permission_android_permission_ACCESS_FINE_LOCATION);
                 break;
 
             default:
