@@ -25,3 +25,10 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile project(':PermissionsWrapper')
 }
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+    maven { url 'https://maven.google.com' }
+}
