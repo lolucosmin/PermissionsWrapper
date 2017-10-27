@@ -27,6 +27,7 @@
  */
 package lolodev.permissionswrapper;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -86,10 +87,12 @@ public class RequestPermissionsActv extends AppCompatActivity {
 
     private void initData() {
         Bundle extras = getIntent().getExtras();
-        this.rationalMessage = extras.getString(PERMISSION_RATIONAL_MESSAGE);
-        this.permissions = extras.getStringArray(PERMISSIONS);
-        this.permissionGoSettings = extras.getBoolean(PERMISSIONS_GO_SETTINGS);
-        this.permissionGoSettingsMessage = extras.getString(PERMISSIONS_GO_SETTINGS_MESSAGE);
+        if (extras != null) {
+            this.rationalMessage = extras.getString(PERMISSION_RATIONAL_MESSAGE);
+            this.permissions = extras.getStringArray(PERMISSIONS);
+            this.permissionGoSettings = extras.getBoolean(PERMISSIONS_GO_SETTINGS);
+            this.permissionGoSettingsMessage = extras.getString(PERMISSIONS_GO_SETTINGS_MESSAGE);
+        }
     }
 
     private void checkPermission() {
@@ -167,6 +170,7 @@ public class RequestPermissionsActv extends AppCompatActivity {
     }
 
 
+    @SuppressLint("RestrictedApi")
     private void showRationalDialog() {
         new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.RationalDialogStyle))
                 .setMessage(rationalMessage)
@@ -186,6 +190,7 @@ public class RequestPermissionsActv extends AppCompatActivity {
                 .setCancelable(false);
     }
 
+    @SuppressLint("RestrictedApi")
     private void showPermissionsSettingsDialog(int index) {
         String message;
         if (!TextUtils.isEmpty(permissionGoSettingsMessage)) {
