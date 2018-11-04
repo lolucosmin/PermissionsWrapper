@@ -6,7 +6,7 @@ PermissionsWrapper is the easiest way to manage Android Marshmallow and Nougat r
 Add dependencies
 ```Gradle
 dependencies {
-    implementation 'com.github.lolucosmin:PermissionsWrapper:version_1.6'
+    implementation 'com.github.lolucosmin:PermissionsWrapper:version_1.7'
 }
 ```
 
