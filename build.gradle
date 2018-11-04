@@ -12,7 +12,7 @@ buildscript {
         classpath 'com.android.tools.build:gradle:3.2.1'
 
         //publish location https://jitpack.io/#lolucosmin/PermissionsWrapper/version_1.6
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
 }
 
