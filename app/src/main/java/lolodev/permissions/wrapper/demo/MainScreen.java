@@ -2,11 +2,11 @@ package lolodev.permissions.wrapper.demo;
 
 import android.Manifest;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
 import lolodev.permissionswrapper.callback.OnRequestPermissionsCallBack;
 import lolodev.permissionswrapper.wrapper.PermissionWrapper;
 
@@ -28,11 +28,9 @@ public class MainScreen extends AppCompatActivity {
 
     private void onAskPermissionSample1() {
         new PermissionWrapper.Builder(this)
-                .addPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE})
-                //enable rationale message with a custom message
-                .addPermissionRationale("Rationale message")
+                .addPermissions(new String[]{Manifest.permission.ACCESS_BACKGROUND_LOCATION})
                 //show settings dialog,in this case with default message base on requested permission/s
-                .addPermissionsGoSettings(true)
+                .addPermissionsGoSettings(false)
                 //enable callback to know what option was choose
                 .addRequestPermissionsCallBack(new OnRequestPermissionsCallBack() {
                     @Override

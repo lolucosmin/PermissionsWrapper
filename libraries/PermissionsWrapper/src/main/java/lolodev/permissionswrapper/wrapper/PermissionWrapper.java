@@ -31,11 +31,14 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.support.v4.content.LocalBroadcastManager;
+import android.util.Log;
 
-import lolodev.permissionswrapper.constants.Constants;
-import lolodev.permissionswrapper.RequestPermissionsActv;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import lolodev.permissionswrapper.RequestPermissionsScreen;
 import lolodev.permissionswrapper.callback.OnRequestPermissionsCallBack;
+import lolodev.permissionswrapper.constants.Constants;
 
 /**
  * Created by LoloDev on 4/5/2017.
@@ -46,7 +49,7 @@ import lolodev.permissionswrapper.callback.OnRequestPermissionsCallBack;
 @SuppressWarnings("WeakerAccess")
 public class PermissionWrapper {
 
-    private Context context;
+    private AppCompatActivity appCompatActivity;
     private String rationalMessage;
     private String[] permissions;
     private boolean permissionGoSettings;
@@ -58,29 +61,29 @@ public class PermissionWrapper {
 
         public PermissionWrapper permissionWrapper = new PermissionWrapper();
 
-        public Builder(Context context) {
-            permissionWrapper.context = context;
+        public Builder(@NonNull AppCompatActivity appCompatActivity) {
+            this.permissionWrapper.appCompatActivity = appCompatActivity;
         }
 
         public Builder addPermissionRationale(String rationalMessage) {
-            permissionWrapper.rationalMessage = rationalMessage;
+            this.permissionWrapper.rationalMessage = rationalMessage;
             return this;
         }
 
         public Builder addPermissions(String[] permissions) {
-            permissionWrapper.permissions = permissions;
+            this.permissionWrapper.permissions = permissions;
             return this;
         }
 
         public Builder addPermissionsGoSettings(boolean permissionGoSettings, String permissionGoSettingsMessage) {
-            permissionWrapper.permissionGoSettings = permissionGoSettings;
-            permissionWrapper.permissionGoSettingsMessage = permissionGoSettingsMessage;
+            this.permissionWrapper.permissionGoSettings = permissionGoSettings;
+            this.permissionWrapper.permissionGoSettingsMessage = permissionGoSettingsMessage;
             return this;
         }
 
         public Builder addPermissionsGoSettings(boolean permissionGoSettings) {
-            permissionWrapper.permissionGoSettings = permissionGoSettings;
-            permissionWrapper.permissionGoSettingsMessage = null;
+            this.permissionWrapper.permissionGoSettings = permissionGoSettings;
+            this.permissionWrapper.permissionGoSettingsMessage = null;
             return this;
         }
 
@@ -95,13 +98,19 @@ public class PermissionWrapper {
     }
 
     public void request() {
-        if (permissions == null || permissions.length == 0) {
+        if (this.permissions == null || this.permissions.length == 0) {
             return;
         }
-        Intent intent = RequestPermissionsActv.newIntent(context, permissions, rationalMessage, permissionGoSettings, permissionGoSettingsMessage);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
-        LocalBroadcastManager.getInstance(context).registerReceiver(callBackBroadcastReceiver, new IntentFilter(context.getPackageName()));
+        try {
+            Intent intent = RequestPermissionsScreen.newIntent(this.appCompatActivity, this.permissions, this.rationalMessage, this.permissionGoSettings, this.permissionGoSettingsMessage);
+            if (intent != null) {
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                this.appCompatActivity.startActivity(intent);
+                LocalBroadcastManager.getInstance(this.appCompatActivity).registerReceiver(this.callBackBroadcastReceiver, new IntentFilter(this.appCompatActivity.getPackageName()));
+            }
+        } catch (Exception ex) {
+            Log.e(PermissionWrapper.class.getName(), String.valueOf(ex.getMessage()));
+        }
     }
 
     class CallBackBroadcastReceiver extends BroadcastReceiver {
@@ -118,7 +127,11 @@ public class PermissionWrapper {
                 String permission = intent.getStringExtra(Constants.DENIED);
                 onRequestPermissionsCallBack.onDenied(permission);
             }
-            LocalBroadcastManager.getInstance(PermissionWrapper.this.context).unregisterReceiver(callBackBroadcastReceiver);
+            try {
+                LocalBroadcastManager.getInstance(PermissionWrapper.this.appCompatActivity).unregisterReceiver(callBackBroadcastReceiver);
+            } catch (Exception ex) {
+                Log.e(PermissionWrapper.class.getName(), String.valueOf(ex.getMessage()));
+            }
         }
     }
 }

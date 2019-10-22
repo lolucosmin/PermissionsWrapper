@@ -1,16 +1,14 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="RationalDialogStyle" parent="@style/Theme.AppCompat.Light.Dialog">
-
         <!-- alert dialog style-->
-        <item name="alertDialogTheme">@style/AlertDialogStyle</item>
-        <item name="android:alertDialogTheme">@style/AlertDialogStyle</item>
+        <item name="alertDialogTheme" tools:ignore="DuplicateDefinition">@style/AlertDialogStyle</item>
+        <item name="alertDialogTheme" tools:ignore="DuplicateDefinition">@style/AlertDialogStyle</item>
     </style>
 
     <style name="PermissionRequestActv" parent="@style/Theme.AppCompat.Dialog">
         <item name="windowNoTitle">true</item>
     </style>
-
 
     <!--Alert Dialogs-->
     <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
@@ -20,7 +18,7 @@
         <item name="android:textColorPrimary">@android:color/black</item>
         <item name="android:textColorSecondary">@android:color/black</item>
         <!-- Used for the background -->
-        <item name="android:background">@android:color/white</item>
+        <item name="background">@android:color/white</item>
 
         <item name="android:windowTitleStyle">@style/AlertDialogTitleTextStyle</item>
     </style>
@@ -30,6 +28,5 @@
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Title</item>
     </style>
     <!--Alert Dialogs-->
-
 
 </resources>
